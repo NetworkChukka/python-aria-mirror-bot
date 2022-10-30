@@ -18,7 +18,7 @@ def _authorize(id: int, context, update: Update):
         AUTHORIZED_CHATS.add(chat_id)
         msg = f'Authorized {salutation}'
     else:
-        msg = f'Already authorized {salutation}'
+        msg = f'✅ Already authorized {salutation}'
     sendMessage(msg, context.bot, update)
 @run_async
 def authorize(update: Update,context):
@@ -54,7 +54,7 @@ def _unauthorize(id: int, context, update):
         AUTHORIZED_CHATS.remove(chat_id)
         msg = f'Unauthorized {salutation}'
     else:
-        msg = f'Already unauthorized {salutation}'
+        msg = f'😇 Already unauthorized {salutation}'
     sendMessage(msg, context.bot, update)
 @run_async
 def unauthorize(update,context):

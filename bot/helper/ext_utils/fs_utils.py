@@ -31,7 +31,7 @@ def clean_all():
 
 def exit_clean_up(signal, frame):
     try:
-        LOGGER.info("Please wait, while we clean up the downloads and stop running downloads")
+        LOGGER.info("Please wait, 🚿 while we clean up the downloads and stop running downloads")
         clean_all()
         sys.exit(0)
     except KeyboardInterrupt:

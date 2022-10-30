@@ -72,7 +72,7 @@ class MegaDownloader:
             self.__onDownloadComplete()
             return
         if dlInfo['state'] == constants.State.TYPE_STATE_CANCELED:
-            self.__onDownloadError('Cancelled by user')
+            self.__onDownloadError('❌ Cancelled by user')
             return
         if dlInfo['state'] == constants.State.TYPE_STATE_FAILED:
             self.__onDownloadError(dlInfo['error_string'])
