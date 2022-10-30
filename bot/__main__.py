@@ -25,19 +25,26 @@ def stats(update, context):
     free = get_readable_file_size(free)
     cpuUsage = psutil.cpu_percent(interval=0.5)
     memory = psutil.virtual_memory().percent
-    stats = f'Bot Uptime: {currentTime}\n' \
-            f'Total disk space: {total}\n' \
-            f'Used: {used}\n' \
-            f'Free: {free}\n' \
-            f'CPU: {cpuUsage}%\n' \
-            f'RAM: {memory}%'
+    stats = f'♻️ Bot Uptime: {currentTime}\n' \
+            f'♻️ Total disk space: {total}\n' \
+            f'♻️ Used: {used}\n' \
+            f'♻️ Free: {free}\n' \
+            f'♻️ CPU: {cpuUsage}%\n' \
+            f'♻️ RAM: {memory}%'
     sendMessage(stats, context.bot, update)
 
 
 @run_async
 def start(update, context):
     start_string = f'''
-This is a bot which can mirror all your links to Google drive!
+Hey Thank You For Starting Me 🤍
+I am Anonymous Mirror And Leech Bot 😇 Created By @networkchukka and @mihirankaweeshwara
+I can mirror all your links to Google Drive🪛 and Direct Link🔗!
+I Always Trying To Download And Upload Your Files Quickly!
+But server sometimes slow down If you Can Donate Us to Get New server Follow This Links And Donate ❤️🥺
+Buy Me a Cofee - https://www.buymeacoffee.com/networkchukka
+Ko-fi - https://ko-fi.com/networkchukka
+
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     sendMessage(start_string, context.bot, update)
@@ -45,7 +52,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 
 @run_async
 def restart(update, context):
-    restart_message = sendMessage("Restarting, Please wait!", context.bot, update)
+    restart_message = sendMessage("♻️ Restarting, Please wait!", context.bot, update)
     # Save restart message object in order to reply to it after restarting
     fs_utils.clean_all()
     with open('restart.pickle', 'wb') as status:
@@ -69,6 +76,8 @@ def log(update, context):
 @run_async
 def bot_help(update, context):
     help_string = f'''
+This Is Help Section Of Anonymous Mirror And Leech Bot 
+
 /{BotCommands.HelpCommand}: To get this message
 
 /{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to google drive
@@ -92,6 +101,8 @@ def bot_help(update, context):
 /{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by owner of the bot)
 
 /{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
+
+#anonymousdevalopers
 
 '''
     sendMessage(help_string, context.bot, update)
